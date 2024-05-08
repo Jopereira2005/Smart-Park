@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('Addresses', function (Blueprint $table) {
             $table->id('id');
-            $table->string('name')->nullable();
+            $table->string('nome')->nullable();
             $table->string('complemento')->nullable();
             $table->string('bairro');
-            $table->string('number', 5);
+            $table->string('numero', 5);
             $table->string('rua');
             $table->char('cep', 9)->nullable();
             $table->unsignedBigInteger('id_client')->nullable();

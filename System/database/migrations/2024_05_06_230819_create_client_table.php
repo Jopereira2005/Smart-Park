@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('Clients', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
+            $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
             $table->string('cpf')->size(11)->unique();
