@@ -22,6 +22,8 @@ class Client extends Model
         'password'
     ];
 
+    public $timestamps = false;
+
     public function reserves(): HasMany
     {
         return $this->hasMany(Reserve::class, 'id_client');

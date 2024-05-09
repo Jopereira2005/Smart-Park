@@ -22,6 +22,8 @@ class Commerce extends Model
         'password'
     ];
 
+    public $timestamps = false;
+
     public function address(): belongsTo
     {
         return $this->belongsTo(Address::class, 'id_commerce');

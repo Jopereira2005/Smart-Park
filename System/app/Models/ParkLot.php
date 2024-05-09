@@ -20,6 +20,8 @@ class ParkLot extends Model
         'password'
     ];
 
+    public $timestamps = false;
+
     public function commerce(): HasMany
     {
         return $this->belongsTo(Commerce::class, 'id_commerce');

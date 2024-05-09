@@ -21,6 +21,8 @@ class ParkLot extends Model
         'id_park_lot'
     ];
 
+    public $timestamps = false;
+
     public function client(): belongsTo
     {
         return $this->belongsTo(Client::class, 'id_client');

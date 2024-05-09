@@ -14,10 +14,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call([
+            CommerceSeeder::class,
+        ]);
+
         for($i = 0; $i < 1; $i++) {
             $this->call([
                 ClientSeeder::class,
-                CommerceSeeder::class,
                 ParkLotsSeeder::class,
                 ReserveSeeder::class,
                 AddressSeeder::class,
