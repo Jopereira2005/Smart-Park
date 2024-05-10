@@ -13,6 +13,10 @@
 |
 */
 
+$router->get('/', function () use ($router) {
+    return $router->app->version();
+});
 
-$router->get('/', 'ParkLotController@index');
-
+$router->group(['prefix' => 'vagas'], function () use ($router) {
+    $router->get('/{id}/{status}', 'ParkLotController@status');
+});

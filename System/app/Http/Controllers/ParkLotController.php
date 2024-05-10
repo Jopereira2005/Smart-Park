@@ -22,4 +22,14 @@ class ParkLotController extends Controller
 
         return response()->json($park_lots, 200);
     }
+
+    public function status(int $id, int $status)
+    {
+        $park_lots = ParkLot::find($id);
+
+        $park_lots->status = $status;
+        $park_lots->save();
+
+        return response()->json($park_lots, 200);
+    }
 }
