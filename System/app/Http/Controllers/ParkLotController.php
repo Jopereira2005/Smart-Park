@@ -13,22 +13,30 @@ class ParkLotController extends Controller
     /**
      * index
      *
-     * @return ParkLot
+     * @return ParkLot[]
      */
 
-    public function index()
-    {
+    public function index() {
         $park_lots = ParkLot::all();
 
         return response()->json($park_lots, 200);
     }
 
-    public function status(int $id, int $status)
-    {
+    /**
+     * alterarStatus
+     *
+     * @return ParkLot
+     */
+    public function alterarStatus(int $id, int $status) {
         $park_lots = ParkLot::find($id);
 
-        $park_lots->status = $status;
-        $park_lots->save();
+        if($status < 0 && $status > 2)
+            return response()->json(['erro' => 'status inválido'], 400);
+
+        if($park_lots->status != $status) {
+            $park_lots->status = $status;
+            $park_lots->save();
+        }
 
         return response()->json($park_lots, 200);
     }
