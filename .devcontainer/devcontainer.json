@@ -19,7 +19,9 @@
 		"ghcr.io/devcontainers/features/php:1": {
 			"installComposer": true,
 			"version": "8.2"
-		}
+		},
+		"ghcr.io/devcontainers/features/node:1": {},
+		"ghcr.io/devcontainers-contrib/features/npm-package:1": {}
 	}
 
 	// Use 'postCreateCommand' to run commands after the container is created.
