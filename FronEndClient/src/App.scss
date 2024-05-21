@@ -1,0 +1,109 @@
+body {
+  background-color: var(--gray-scale-light);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--secondary-color);
+  box-shadow: 0px 4px 10px 4px rgba(0,0,0,0.25);
+
+  &__logo {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+
+    &__img {
+      cursor: pointer;
+      width: 55px;
+    }
+
+    &__title {
+      font-family: Fira Sans;
+      font-weight: 400;
+      font-size: 30px;
+      color: var(--light-color);
+
+      .bold {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.section {
+  &__commerce {
+    display: flex;
+    flex-direction: column;
+
+    &__banner {
+      height: 150px;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: 768px;
+      background-image: url(../public/banner.png);
+      z-index: -1;
+      background-position-x: center;
+    }
+
+    &__info {
+      display: flex;
+      justify-content: center;
+      color: var(--dark-color);
+
+      &__container {
+        position: relative;
+        z-index: 1;
+        width: 270px;
+        background-color: var(--light-color);
+        box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.25);
+        border-radius:  0 0 20px 20px;
+        padding: 20px 30px 50px 30px;
+
+        &__favicon {
+          position: absolute;
+          top: -15%;
+  
+          img {
+            height: 100px;
+            border: 5px solid var(--light-color);
+            border-radius: 20px;
+          }
+        }
+
+        &__title {
+          padding-top: 50px;
+          font-size: 30px;
+          font-weight: 900;
+          margin: 0;
+        }
+
+        &__description {
+          color: var(--gray-scale);
+          font-size: 15px;
+          font-weight: normal;
+          margin: 0;
+        }
+
+        &__subtitle {
+          padding: 15px 0;
+          font-size: 20;
+          font-weight: 900;
+          margin: 0;
+        }
+
+        &__paragraph {
+          padding-left: 10px;
+          width: 270px;
+          font-size: 14;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+
