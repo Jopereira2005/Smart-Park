@@ -1,9 +1,10 @@
 import { useState } from 'react'
+import ParkLotSession from './components/ParkLotSession/ParkLotSession'
 import ParkLotCard from './components/ParkLotCard/ParkLotCard'
-import logo from '../public/logo.svg'
-import favicon from '../public/favicon.svg'
-import menu from '../public/menu.svg'
-import banner from '../public/banner.png'
+import logo from '/logo.svg'
+import favicon from '/favicon.svg'
+import menu from '/menu.svg'
+import banner from '/banner.png'
 
 import './App.scss'
 
@@ -14,7 +15,6 @@ function App() {
     address: "Rodovia Senador José Ermírio de Moraes, 1425 - Jardim Constantino Matucci, Sorocaba - SP, 18085-784", 
     phone: "(15) 3238-1188" 
   }
-  
 
   return (
     <>
@@ -45,8 +45,9 @@ function App() {
             </div>
           </div>
         </div>
+
+        <ParkLotSession className="section__parkLots" />
       </section>
-      <ParkLotCard />
 
       <footer></footer>
     </>
