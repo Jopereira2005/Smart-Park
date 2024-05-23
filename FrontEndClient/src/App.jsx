@@ -73,7 +73,12 @@ function App() {
         </div>
       </section>
 
-      <footer className="footer"></footer>
+      <footer className="footer">
+        <div className="footer__logo">
+          <img src={ logo } alt="logo" className="footer__logo__img" />
+          <h1 className="footer__logo__title">Smart<span className="bold">Park</span></h1>
+        </div>
+      </footer>
     </>
   )
 }

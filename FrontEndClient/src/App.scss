@@ -171,7 +171,36 @@ body {
 }
 
 .footer {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
   margin-top: 50px;
   height: 200px;
   background-color: var(--secondary-color);
+
+  &__logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: 45px;
+
+    gap: 10px;
+    
+    &__img {
+      height: 45px;
+    }
+
+    &__title {
+      color: var(--light-color);
+      font-weight: 400;
+      font-size: 30px;
+      margin: 0;
+
+      .bold {
+        font-weight: bold;
+      }
+    }
+  }
 }
