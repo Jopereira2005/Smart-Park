@@ -11,7 +11,9 @@ import menu from '/menu.svg'
 import banner from '/banner.png'
 import reload from '/reload_icon.svg'
 
-const url = "http://localhost:8000"
+// const url = "http://localhost:8000"
+const url = "https://symmetrical-giggle-745w554gxj52x4x-8000.app.github.dev"
+
 
 function App() {
   const { data: parklots, loading, fetchData } = useFetch(url, "/vagas");
