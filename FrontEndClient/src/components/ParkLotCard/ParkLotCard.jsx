@@ -10,18 +10,18 @@ const ParkLotCard = ({name, type, status}) => {
       
       <div className={ styles.card__status }>
         <p style={
-          !status
-          ? {color: "#FC7878"} 
-          : {color: "#66F0AE"}
+          status == '1'
+          ? {color: "#66F0AE"}
+          : {color: "#FC7878"} 
         } 
         className={ styles.card__status__state }>
-          { status? "disponível" : "indisponível" }
+          { status == '1' ? "disponível" : "indisponível" }
         </p>
 
         <div style={
-          !"disponivel"
-          ? {backgroundColor: "#FC7878"} 
-          : {backgroundColor: "#66F0AE"}
+          status == '1'
+          ? {backgroundColor: "#66F0AE"}
+          : {backgroundColor: "#FC7878"} 
         } className={ styles.card__status__icon }></div>
       </div>
     </div>

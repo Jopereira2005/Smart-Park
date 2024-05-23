@@ -1,19 +1,33 @@
-import { useState } from 'react'
+import './App.scss'
+
+import { useState, useEffect } from 'react'
+import { useFetch } from './hooks/useFetch'
+
 import ParkLotSession from './components/ParkLotSession/ParkLotSession'
 import ParkLotCard from './components/ParkLotCard/ParkLotCard'
 import logo from '/logo.svg'
 import favicon from '/favicon.svg'
 import menu from '/menu.svg'
 import banner from '/banner.png'
+import reload from '/reload_icon.svg'
 
-import './App.scss'
+const url = "http://localhost:8000"
 
 function App() {
+  const { data: parklots, loading, fetchData } = useFetch(url, "/vagas");
+
+  console.log(parklots)
   const commerce = {
     name: "Facens", 
     description: "Faculdade em São Paulo", 
     address: "Rodovia Senador José Ermírio de Moraes, 1425 - Jardim Constantino Matucci, Sorocaba - SP, 18085-784", 
     phone: "(15) 3238-1188" 
+  }
+
+  const loading_btn = () => {
+    
+   fetchData();
+   
   }
 
   return (
@@ -46,10 +60,20 @@ function App() {
           </div>
         </div>
 
-        <ParkLotSession className="section__parkLots" />
+        <div className="section__parklots">
+          <div className="section__parklots__nav">
+            <h1 className="section__parklots__nav__title">Vagas</h1>
+            <img onClick={ loading_btn } className="section__parklots__nav__icon" src={ reload } alt="reload" />
+          </div>
+          { !loading && parklots
+            ? <ParkLotSession parklots={ parklots }/> 
+            : <span className="section__parklots__loader"></span>
+          }
+          
+        </div>
       </section>
 
-      <footer></footer>
+      <footer className="footer"></footer>
     </>
   )
 }

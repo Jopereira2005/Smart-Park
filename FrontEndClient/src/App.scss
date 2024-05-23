@@ -1,5 +1,19 @@
+@keyframes rotate {
+  100%   {transform: rotate(360deg)}
+}
+
+@keyframes prixClipFix {
+    0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+    25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+    50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+    75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+    100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+}
+
 body {
   background-color: var(--gray-scale-light);
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -44,7 +58,7 @@ body {
       background-attachment: fixed;
       background-repeat: no-repeat;
       background-size: 768px;
-      background-image: url(../public/banner.png);
+      background-image: url(/banner.png);
       z-index: -1;
       background-position-x: center;
     }
@@ -104,6 +118,60 @@ body {
       }
     }
   }
+
+  &__parklots {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 350px;
+      padding: 30px 0;
+
+      &__title {
+        color: var(--dark-color);
+        font-size: 30px;
+        font-weight: 900;
+        margin: 0;
+      }
+
+      &__icon {
+        width: 30px;
+        cursor: pointer;
+        transition: ease-out 2s;
+        
+        &__animate {
+          animation: rotate 2s linear;
+        }
+      }
+    }
+
+    &__loader {
+      margin: 30px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      position: relative;
+      animation: rotate 1s linear infinite;
+
+      &::before {
+        content: "";
+        box-sizing: border-box;
+        position: absolute;
+        inset: 0px;
+        border-radius: 50%;
+        border: 10px solid var(--gray-scale);
+        animation: prixClipFix 2s linear infinite ;
+      }
+    }
+  }
 }
 
-
+.footer {
+  margin-top: 50px;
+  height: 200px;
+  background-color: var(--secondary-color);
+}
