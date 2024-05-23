@@ -18,5 +18,6 @@ $router->get('/', function () use ($router) {
 });
 
 $router->group(['prefix' => 'vagas'], function () use ($router) {
+    $router->get('/', 'ParkLotController@index');
     $router->get('/{id}/{status}', 'ParkLotController@alterarStatus');
 });

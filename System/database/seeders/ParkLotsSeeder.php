@@ -18,12 +18,13 @@ class ParkLotsSeeder extends Seeder
         $faker = Factory::create();
         $commerces = DB::table('Commerces')->pluck('id')->toArray();
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 1; $i <= 10; $i++) {
+            $name = "A0" . $i;
             DB::table('Park_lots')->insert([
-                'name' => $faker->name(),
-                'status' => $faker->randomElement(['0', '1', '2']),
-                'type' => $faker->randomElement(['Normal', 'Preferencial/Idoso', 'Preferencial/Deficiente']),
-                'id_commerce' => $faker->randomElement($commerces)
+                'name' => $name,
+                'status' => $faker->randomElement(['0', '1']),
+                'type' => $faker->randomElement(['Normal', 'Idoso', 'Deficiente']),
+                'id_commerce' => 1
             ]);
         }
     }

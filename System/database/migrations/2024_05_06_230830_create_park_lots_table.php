@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('Park_lots', function (Blueprint $table) {
             $table->id('id');
             $table->string('name');
-            $table->enum('status', ['0', '1', '2']);
-            $table->enum('type', ['Normal', 'Preferencial/Idoso', 'Preferencial/Deficiente']);
+            $table->enum('status', ['0', '1']);
+            $table->enum('type', ['Normal', 'Idoso', 'Deficiente']);
             $table->unsignedBigInteger('id_commerce');
             $table->foreign('id_commerce')->references('id')->on('Commerces');
             $table->timestamps();
